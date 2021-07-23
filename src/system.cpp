@@ -29,7 +29,7 @@ vector<Process>& System::Processes() {
   for (long unsigned int i = 0; i < pids.size(); i++) {
     if (!LinuxParser::Ram(pids[i]).empty()) {
       Process process(pids[i]);
-      processes_.push_back(process);
+      processes_.emplace_back(process);
     }
   }
   

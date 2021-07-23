@@ -43,7 +43,15 @@ float Process::CpuUtilization() {
 string Process::Command() const { return LinuxParser::Command(Pid()); }
 
 // TODO: Return this process's memory utilization
-string Process::Ram() const { return LinuxParser::Ram(Pid()); }
+string Process::Ram()  { 
+    string ramstring = LinuxParser::Ram(pid_); 
+    try {
+        ram_ = std::stol(ramstring) / 1024;        
+    } catch(...) {
+        ram_ = 0;
+    }
+    return std::to_string(ram_);
+}
 
 // TODO: Return the user (name) that generated this process
 string Process::User() const { return LinuxParser::User(Pid()); }
@@ -58,3 +66,12 @@ bool Process::operator<(Process const& a) const {
     return cpu_ < a.cpu_;
 }
 
+
+void Process::setRam() {
+    string ramStr = LinuxParser::Ram(pid_);
+    try {
+        ram_ = std::stol(ramStr) / 1024;
+    } catch (...) {
+        ram_ = 0;
+    }
+}

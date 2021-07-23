@@ -62,7 +62,7 @@ vector<int> LinuxParser::Pids() {
       string filename(file->d_name);
       if (std::all_of(filename.begin(), filename.end(), isdigit)) {
         int pid = stoi(filename);
-        pids.push_back(pid);
+        pids.emplace_back(pid);
       }
     }
   }
@@ -106,18 +106,6 @@ long LinuxParser::UpTime() {
   return stoi(val);
 }
 
-// TODO: Read and return the number of jiffies for the system
-long LinuxParser::Jiffies() { return 0; }
-
-// TODO: Read and return the number of active jiffies for a PID
-// REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::ActiveJiffies(int pid[[maybe_unused]]) { return 0; }
-
-// TODO: Read and return the number of active jiffies for the system
-long LinuxParser::ActiveJiffies() { return 0; }
-
-// TODO: Read and return the number of idle jiffies for the system
-long LinuxParser::IdleJiffies() { return 0; }
 // TODO: Read and return CPU utilization
 vector<string> LinuxParser::CpuUtilization() { 
     vector<string> cpuInfo;
@@ -134,16 +122,16 @@ vector<string> LinuxParser::CpuUtilization() {
         }
     }
 
-    cpuInfo.push_back(user);
-    cpuInfo.push_back(nice);
-    cpuInfo.push_back(system);
-    cpuInfo.push_back(idle);
-    cpuInfo.push_back(iowait);
-    cpuInfo.push_back(irq);
-    cpuInfo.push_back(softirq);
-    cpuInfo.push_back(steal);
-    cpuInfo.push_back(guest);
-    cpuInfo.push_back(guest_nice);
+    cpuInfo.emplace_back(user);
+    cpuInfo.emplace_back(nice);
+    cpuInfo.emplace_back(system);
+    cpuInfo.emplace_back(idle);
+    cpuInfo.emplace_back(iowait);
+    cpuInfo.emplace_back(irq);
+    cpuInfo.emplace_back(softirq);
+    cpuInfo.emplace_back(steal);
+    cpuInfo.emplace_back(guest);
+    cpuInfo.emplace_back(guest_nice);
 
     return cpuInfo;
 }
@@ -204,19 +192,20 @@ string LinuxParser::Command(int pid) {
 // TODO: Read and return the memory used by a process
 // REMOVE: [[maybe_unused]] once you define the function
 string LinuxParser::Ram(int pid_) { 
-    const string VM_SIZE{"VmSize:"};
-    string line, key, vmsize;
+  //have used vmrss instead of vmsize
+    const string VM_RSS{"VmRSS:"};
+    string line, key, VmRSS;
     std::ifstream stream(kProcDirectory + std::to_string(pid_) + kStatusFilename);
     if (stream.is_open()) {
         while (std::getline(stream, line)) {
             std::istringstream linestream(line);
             linestream >> key;
-            if (key == VM_SIZE) {
-                linestream >> vmsize;
+            if (key == VM_RSS) {
+                linestream >> VmRSS;
             }
         }
     }
-    return vmsize;
+    return VmRSS;
 }
 
 // TODO: Read and return the user ID associated with a process
@@ -270,7 +259,7 @@ long LinuxParser::UpTime(int pid) {
     std::getline(stream, line);
     std::istringstream linestream(line);
     while (linestream >> token) {
-      values.push_back(token);
+      values.emplace_back(token);
     }
   }
   int upTimePid = UpTime() -stol(values[21])/sysconf(_SC_CLK_TCK);
@@ -285,7 +274,7 @@ vector<string> LinuxParser::ProcessorUtilization(int pid) {
         while (std::getline(stream, line)) {
             std::istringstream linestream(line);
             while (linestream >> tmp) {
-                info.push_back(tmp);
+                info.emplace_back(tmp);
             }
         }
     }

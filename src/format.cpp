@@ -1,20 +1,30 @@
 #include <string>
-
+#include <sstream>
 #include "format.h"
 
 using std::string;
 
-// TODO: Complete this helper function
+#define HOUR  3600
+#define MIN   60
+
 // INPUT: Long int measuring seconds
 // OUTPUT: HH:MM:SS
-// REMOVE: [[maybe_unused]] once you define the function
 string Format::ElapsedTime(long seconds) { 
-    long int time = seconds;
-    long int hour = time / 3600;
-    time%= 3600;
-    long int minutes = time / 60;
-    time %= 60;
-    long int sec = time;
-
-    return std::to_string(hour) + ":" + std::to_string(minutes) + ":" + std::to_string(sec);
+  int h = seconds / HOUR;
+  int sec = seconds % HOUR;
+  int min = sec / MIN;
+  sec %= MIN;
+  
+  std::ostringstream out_stream;
+  out_stream.width(2);
+  out_stream.fill('0');
+  out_stream << h << ":";
+  out_stream.width(2);
+  out_stream.fill('0');
+  out_stream << min << ":";
+  out_stream.width(2);
+  out_stream.fill('0');
+  out_stream << sec;
+  
+  return out_stream.str();
 }
