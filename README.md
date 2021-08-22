@@ -2,9 +2,8 @@
 
 # Introduction
 
-
-This project is a version of the Linux system monitor(HTOP) and it is coded in the c++ environment and it specifically uses C++ Object Oriented Programming.
-
+This project predominantly invloves the use of C++ OOP to code a Linux system monitor with similar functionality to the widely
+used htop application. This project provides more familiarity the Linux operating system, and also give you insights into how a collection of objects can function together in C++ to form an exciting and complete application!
 
 ![System Monitor](images/monitor.png)
 
