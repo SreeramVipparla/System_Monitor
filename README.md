@@ -3,7 +3,7 @@
 # Introduction
 
 
-This project is a version of the Linux system monitor(HTOP) and the is coded in the c++ environment and it specifically uses C++ Object Oriented Programming.
+This project is a version of the Linux system monitor(HTOP) and it is coded in the c++ environment and it specifically uses C++ Object Oriented Programming.
 
 
 ![System Monitor](images/monitor.png)
