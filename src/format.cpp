@@ -7,8 +7,6 @@ using std::string;
 #define HOUR  3600
 #define MIN   60
 
-// INPUT: Long int measuring seconds
-// OUTPUT: HH:MM:SS
 string Format::ElapsedTime(long seconds) { 
   int h = seconds / HOUR;
   int sec = seconds % HOUR;

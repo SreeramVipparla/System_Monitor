@@ -13,8 +13,6 @@
 using std::string;
 using std::to_string;
 
-// 50 bars uniformly displayed from 0 - 100 %
-// 2% is one bar(|)
 std::string NCursesDisplay::ProgressBar(float percent) {
   std::string result{"0%"};
   int size{50};
@@ -85,10 +83,10 @@ void NCursesDisplay::DisplayProcesses(std::vector<Process>& processes,
 }
 
 void NCursesDisplay::Display(System& system, int n) {
-  initscr();      // start ncurses
-  noecho();       // do not print input values
-  cbreak();       // terminate ncurses on ctrl + c
-  start_color();  // enable color
+  initscr();      
+  noecho();       
+  cbreak();       
+  start_color();  
 
   int x_max{getmaxx(stdscr)};
   WINDOW* system_window = newwin(9, x_max - 1, 0, 0);
