@@ -2,8 +2,8 @@
 
 # Introduction
 
-This project predominantly invloves the use of C++ OOP to code a Linux system monitor with similar functionality to the widely
-used htop application. This project provides more familiarity the Linux operating system, and also give you insights into how a collection of objects can function together in C++ to form an exciting and complete application!
+This project predominantly involves the use of C++ OOP to code a Linux system monitor with similar functionality to the widely
+used htop application. This project provides more familiarity the Linux operating system, and also gives you insight into how a collection of objects can function together in C++ to form an exciting and complete application!
 
 ![System Monitor](images/monitor.png)
 
