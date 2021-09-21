@@ -34,7 +34,7 @@ vector<Process>& System::Processes() {
 }
 std::string System::Kernel() {
 return LinuxParser::Kernel();
-}
+}git 
 float System::MemoryUtilization() {
 return LinuxParser::MemoryUtilization();
 }
