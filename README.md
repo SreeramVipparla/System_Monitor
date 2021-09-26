@@ -2,7 +2,7 @@
 ## Overview
 
 <a href="System Monitor" target="_blank">
-<img src="https://user-images.githubusercontent.com/86887626/134106616-d0f8c64e-f210-4efe-bc6d-8fbbf207f947.png"  width="300" height="300"/>
+<img src="https://user-images.githubusercontent.com/86887626/134796595-7335e05b-8f6c-44ac-9b46-666486ecb6a8.jpg"/>
 
 ## Introduction
 
