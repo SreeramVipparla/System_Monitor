@@ -1,12 +1,11 @@
-# System-Monitor
+# System-Monitor Project
 
 <a href="System Monitor" target="_blank">
 <img src="https://user-images.githubusercontent.com/86887626/134106616-d0f8c64e-f210-4efe-bc6d-8fbbf207f947.png"  width="300" height="300"/>
 
 # Introduction
 
-This project that I have created  predominantly involves the use of C++ OOP to code a Linux system monitor with similar functionality to the widely
-used htop application. The project provides more familiarity the Linux operating system, and also gives you insight into how a collection of objects can function together in C++ to form an exciting and complete application!
+In this project I have developed an application similar to HTop. The Project predominantly involves the use of C++ OOP and  provides more familiarity the Linux operating system, and gives you insight into how a collection of objects can function together in C++ to form an exciting and complete application!
 
 ![System Monitor](images/monitor.png)
 
