@@ -5,21 +5,19 @@
 
 # Introduction
 
-In this project I have developed an application similar to HTop. The Project predominantly involves the use of C++ OOP and  provides more familiarity the Linux operating system, and gives you insight into how a collection of objects can function together in C++ to form an exciting and complete application!
+In this project I have developed an application similar to HTop. This Project predominantly involves the use of C++ OOP and  provides more familiarity the Linux operating system, and gives the insight into how a collection of objects can function together in C++ to form an exciting and complete application!
 
 ![System Monitor](images/monitor.png)
 
 ## Programming Libraries
-
-The project uses two programming libraries:
-
-### ncurses
+This project uses two programming libraries:
+#### 1)ncurses
 
 [ncurses](https://www.gnu.org/software/ncurses/) is a library that facilitates text-based graphical output in the terminal. This project relies on ncurses for display output.
 
 Install ncurses within in your Linux environment using : `sudo apt install libncurses5-dev libncursesw5-dev`
 
-### Make
+#### 2)Make
 
 This project uses [Make](https://www.gnu.org/software/make/). The Makefile has four targets:
 
