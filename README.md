@@ -1,4 +1,4 @@
-# System-Monitor Project
+# System Monitor Project
 ## Overview
 
 <a href="System Monitor" target="_blank">
@@ -14,9 +14,9 @@ In this project I have developed an application similar to HTop. This Project pr
 This project uses two programming libraries:
 #### 1)ncurses
 
-[ncurses](https://www.gnu.org/software/ncurses/) is a library that facilitates text-based graphical output in the terminal. This project relies on ncurses for display output.
-
-Install ncurses within in your Linux environment using : `sudo apt install libncurses5-dev libncursesw5-dev`
+[ncurses](https://www.gnu.org/software/ncurses/) is a library that facilitates text-based graphical output in the terminal. This project relies on ncurses for display output.width="1000" height="250"
+width="1000" height="250"
+Install ncurses within in your Linux environment using : `suwidth="1000" height="250"do apt install libncurses5-dev libncursesw5-dev`
 
 #### 2)Make
 
